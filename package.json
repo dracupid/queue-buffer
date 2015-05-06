@@ -1,0 +1,44 @@
+{
+  "name": "queue-buffer",
+  "version": "0.1.0",
+  "description": "A flexible buffer with a complete but limited Buffer API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "no test",
+    "prepublish": "no"
+  },
+  "author": "dracupid <dracupid@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "benchmark": "git+https://github.com/bestiejs/benchmark.js.git",
+    "coffee-script": "*",
+    "coffeelint": "*",
+    "dracupid-no": "git+https://github.com/dracupid/dracupid-no.git",
+    "mocha": "^2.2.4",
+    "nodoc": "^0.2.3",
+    "nokit": "^0.6.5"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dracupid/flex-buffer.git"
+  },
+  "keywords": [
+    "flex",
+    "buffer",
+    "resize",
+    "auto"
+  ],
+  "bugs": {
+    "url": "https://github.com/dracupid/flex-buffer/issues"
+  },
+  "homepage": "https://github.com/dracupid/flex-buffer#readme",
+  "dependencies": {
+    "flex-buffer": "^0.4.1"
+  }
+}
