@@ -4,7 +4,7 @@ $ = require('dracupid-no')(kit)
 
 module.exports = (task) ->
     task 'build', "Build Project", (opts) ->
-        $.coffee disable: 'missing_fat_arrows'
+        $.coffee disable: 'missing_fat_arrows', useCache: false
 
     task 'doc', ->
         nodoc = require 'nodoc'

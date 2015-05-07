@@ -1,8 +1,8 @@
 {
   "name": "queue-buffer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A flexible buffer with a complete but limited Buffer API.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "no test",
     "prepublish": "no"
