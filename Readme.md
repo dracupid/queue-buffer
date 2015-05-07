@@ -26,7 +26,7 @@ buf.read(5);
 ```
 
 ## API
-Queue-Buffer extends Flex-buffer, please see [Flex-Buffer](https://github.com/dracupid/flex-buffer) for more API info.
+QueueBuffer extends Flexbuffer, please see [Flex-Buffer](https://github.com/dracupid/flex-buffer#api) for more API info.
 
 
 
@@ -65,20 +65,20 @@ Queue-Buffer extends Flex-buffer, please see [Flex-Buffer](https://github.com/dr
     number of bytes to move, can be negative.
 
 - #### <a href="./src/index.coffee?source#L88" target="_blank"><b>skip(size)</b></a>
-  Move current read forward.
+  Move current read offset forward.
 
   - **<u>param</u>**: `size` { _number_ }
 
     number of bytes to skip
 
 - #### <a href="./src/index.coffee?source#L98" target="_blank"><b>rewind(size)</b></a>
-  Move current read backward.
+  Move current read offset backward.
 
   - **<u>param</u>**: `size` { _number_ }
 
     number of bytes to rewind
 
-- #### <a href="./src/index.coffee?source#L113" target="_blank"><b>read(size) (alias: unshift, dequeue) </b></a>
+- #### <a href="./src/index.coffee?source#L120" target="_blank"><b>read(size) (alias: unshift, dequeue) </b></a>
   Read bytes from the head of the buffer.
 
   - **<u>param</u>**: `size` { _number_ }
@@ -89,7 +89,7 @@ Queue-Buffer extends Flex-buffer, please see [Flex-Buffer](https://github.com/dr
 
     data
 
-- #### <a href="./src/index.coffee?source#L141" target="_blank"><b>write(value, encoding = "utf8") (alias: push, enqueue) </b></a>
+- #### <a href="./src/index.coffee?source#L144" target="_blank"><b>write(value, encoding = "utf8") (alias: push, enqueue) </b></a>
   see [FlexBuffer](https://github.com/dracupid/flex-buffer#writevalue-encoding--utf8)
 
   - **<u>param</u>**: `value` { _number | string | Array | Buffer_ }
@@ -100,7 +100,7 @@ Queue-Buffer extends Flex-buffer, please see [Flex-Buffer](https://github.com/dr
 
     string encoding
 
-- #### <a href="./src/index.coffee?source#L149" target="_blank"><b>length</b></a>
+- #### <a href="./src/index.coffee?source#L152" target="_blank"><b>length</b></a>
   length of the data
 
   - **<u>type</u>**: { _number_ }
@@ -118,9 +118,15 @@ npm test
 ```
 npm run benchmark
 ```
-Environment: io.js v1.8.1, OS X 10.10.2, Intel(R) Core(TM) i7-4870HQ CPU @ 2.50GHz
+Environment: io.js v2.0.0, OS X 10.10.2, Intel(R) Core(TM) i7-4870HQ CPU @ 2.50GHz
 
-TODO
+- Read
+    - Buffer x 710,928 ops/sec ±0.40% (91 runs sampled)
+    - FlexBuffer x 687,658 ops/sec ±1.44% (90 runs sampled)
+
+- wrapped native API
+    - Buffer x 20,815,938 ops/sec ±0.59% (94 runs sampled)
+    - FlexBuffer x 14,698,706 ops/sec ±0.84% (93 runs sampled)
 
 ## License
 MIT@Dracupid

@@ -26,7 +26,7 @@ buf.read(5);
 ```
 
 ## API
-Queue-Buffer extends Flex-buffer, please see [Flex-Buffer](https://github.com/dracupid/flex-buffer) for more API info.
+QueueBuffer extends Flexbuffer, please see [Flex-Buffer](https://github.com/dracupid/flex-buffer#api) for more API info.
 
 <%= api %>
 
@@ -41,9 +41,15 @@ npm test
 ```
 npm run benchmark
 ```
-Environment: io.js v1.8.1, OS X 10.10.2, Intel(R) Core(TM) i7-4870HQ CPU @ 2.50GHz
+Environment: io.js v2.0.0, OS X 10.10.2, Intel(R) Core(TM) i7-4870HQ CPU @ 2.50GHz
 
-TODO
+- Read
+    - Buffer x 710,928 ops/sec ±0.40% (91 runs sampled)
+    - FlexBuffer x 687,658 ops/sec ±1.44% (90 runs sampled)
+
+- wrapped native API
+    - Buffer x 20,815,938 ops/sec ±0.59% (94 runs sampled)
+    - FlexBuffer x 14,698,706 ops/sec ±0.84% (93 runs sampled)
 
 ## License
 MIT@Dracupid

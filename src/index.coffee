@@ -17,7 +17,7 @@ class QueueBuffer extends FlexBuffer
      * @option {number} autoReleaseThreshold    auto release threshold(ms)
     ###
     constructor: (arg, opt = {}) ->
-        @autoRelease = opt.autoRelease or true
+        @autoRelease = if opt.autoRelease? then opt.autoRelease else true
         @AUTO_RELEASE_THRESHOLD = opt.autoReleaseThreshold or QueueBuffer.AUTO_RELEASE_THRESHOLD
         @_readOffset = 0
         @_freeTime = 0
@@ -82,7 +82,7 @@ class QueueBuffer extends FlexBuffer
             throw new QueueReadError "Move out of the block content.(Cur: #{@_readOffset}; Remain: #{@length}; Move: #{size})"
 
     ###*
-     * Move current read forward.
+     * Move current read offset forward.
      * @param  {number} size    number of bytes to skip
     ###
     skip: (size) ->
@@ -92,7 +92,7 @@ class QueueBuffer extends FlexBuffer
             throw new QueueReadError "Can only skip forward. (Try to skip #{size} bytes.)"
 
     ###*
-     * Move current read backward.
+     * Move current read offset backward.
      * @param  {number} size    number of bytes to rewind
     ###
     rewind: (size) ->
@@ -103,6 +103,13 @@ class QueueBuffer extends FlexBuffer
                 throw new QueueReadError "Can only rewind backward. (Try to rewind #{size} bytes.)"
         else
             @_readOffset = 0
+
+    _readAssert: (size) ->
+        if @_readOffset + size > @_buffer.length
+            throw new QueueReadError "Read out of the buffer. (Read: #{size}; Offset: #{@_readOffset}; BufferSize: #{@_buffer.length})"
+        else if size > @length
+            # cauch it
+            throw new QueueDelayError "No enough bytes to be read. (Reauired: #{size}; Remaining: #{@length})"
 
     ###*
      * Read bytes from the head of the buffer.
@@ -115,12 +122,8 @@ class QueueBuffer extends FlexBuffer
 
         if size is 0
             null
-        else if @_readOffset + size > @_buffer.length
-            throw new QueueReadError "Read out of the buffer. (Read: #{size}; Offset: #{@_readOffset}; BufferSize: #{@_buffer.length})"
-        else if size > @length
-            # cauch it
-            throw new QueueDelayError "No enough bytes to be read. (Reauired: #{size}; Remaining: #{@length})"
         else
+            @_readAssert size
             buf = @_buffer.slice @_readOffset, @_readOffset + size
             @_readOffset += size
             @_freeIfRequired()
@@ -153,9 +156,9 @@ Object.defineProperties QueueBuffer::,
 
 _readerBuilder = (len, k, v) ->
     QueueBuffer::[k] = ->
-        oldReadOffset = @_readOffset
-        @read len
-        res = v.call @_buffer, oldReadOffset, false
+        @_readAssert len
+        res = v.call @_buffer, @_readOffset, false
+        @_readOffset += len
         @_freeIfRequired()
 
         res
@@ -172,9 +175,9 @@ for k, v of Buffer::
                 _readerBuilder.call @, 4, k, v
             else
                 QueueBuffer::[k] = (byteLength) ->
-                    oldReadOffset = @_readOffset
-                    @read byteLength
-                    res = v.call @_buffer, oldReadOffset, byteLength, false
+                    @_readAssert byteLength
+                    res = v.call @_buffer, @_readOffset, byteLength, false
+                    @_readOffset += byteLength
                     @_freeIfRequired()
 
                     res

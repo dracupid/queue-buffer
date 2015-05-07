@@ -3,7 +3,7 @@ FB = require '../src'
 a = new Buffer 150
 for i in [1...100]
     a[i] = 10
-b = new FB 150
+b = new FB 150, autoRelease: false
 for i in [1...100]
     b.write 10
 
