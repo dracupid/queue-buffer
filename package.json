@@ -15,7 +15,7 @@
   "devDependencies": {
     "benchmark": "git+https://github.com/bestiejs/benchmark.js.git",
     "coffee-script": "*",
-    "coffeelint": "*",
+    "coffeelint": "1.9.4",
     "dracupid-no": "git+https://github.com/dracupid/dracupid-no.git",
     "mocha": "^2.2.4",
     "nodoc": "^0.2.3",
