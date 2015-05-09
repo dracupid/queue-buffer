@@ -121,7 +121,7 @@ class QueueBuffer extends FlexBuffer
         size >>>= 0
 
         if size is 0
-            null
+            new Buffer 0
         else
             @_readAssert size
             buf = @_buffer.slice @_readOffset, @_readOffset + size

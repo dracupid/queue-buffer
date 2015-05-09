@@ -17,9 +17,9 @@ describe "read data", ->
         eq buf.length, 4
         deq buf.read(3), new Buffer [4, 5, 6]
         eq buf.length, 1
-    it "can read 0 as null", ->
+    it "can read 0 as Buffer(0)", ->
         buf = new QB [1, 2, 3, 4, 5, 6, 7]
-        eq null, buf.read 0
+        deq buf.read(0), new Buffer 0
     it "can detect range error", ->
         buf = new QB 10
         buf.write [1, 2, 3, 4, 5, 6, 7]
