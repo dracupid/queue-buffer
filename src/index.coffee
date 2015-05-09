@@ -1,3 +1,5 @@
+"use strict"
+
 FlexBuffer = require 'flex-buffer'
 {QueueDelayError, QueueReadError} = require './Error'
 

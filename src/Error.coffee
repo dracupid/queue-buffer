@@ -1,3 +1,5 @@
+"use strict"
+
 {format} = require "util"
 
 class QueueDelayError extends Error
