@@ -77,7 +77,7 @@ class QueueBuffer extends FlexBuffer
     ###
     move: (size) ->
         if @_readOffset + size >= 0 and size <= @length
-            @_readOffset += parseInt size, 10
+            @_readOffset += ~~size
         else
             throw new QueueReadError "Move out of the block content.(Cur: #{@_readOffset}; Remain: #{@length}; Move: #{size})"
 
@@ -168,7 +168,7 @@ for k, v of Buffer::
         do (k, v) ->
             arr = k.match /\d+/
             if arr and arr[0]
-                _readerBuilder.call @, parseInt(arr[0]) / 8, k, v
+                _readerBuilder.call @, arr[0] / 8, k, v
             else if /Double/.test k
                 _readerBuilder.call @, 8, k, v
             else if /Float/.test k
