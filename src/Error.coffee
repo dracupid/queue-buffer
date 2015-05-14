@@ -6,13 +6,13 @@ class QueueDelayError extends Error
     constructor: ->
         @name = 'QueueDelayError'
         @message = format.apply null, arguments
-        Error.captureStackTrace @, arguments.callee
+        Error.captureStackTrace @, @constructor
 
 class QueueReadError extends Error
     constructor: ->
         @name = 'QueueReadError'
         @message = format.apply null, arguments
-        Error.captureStackTrace @, arguments.callee
+        Error.captureStackTrace @, @constructor
 
 module.exports = {
     QueueDelayError
