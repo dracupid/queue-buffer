@@ -19,7 +19,7 @@
     "dracupid-no": "git+https://github.com/dracupid/dracupid-no.git",
     "mocha": "^2.2.4",
     "nodoc": "^0.2.3",
-    "nokit": "^0.6.5"
+    "nokit": "0.6.6"
   },
   "directories": {
     "test": "test"
@@ -39,6 +39,6 @@
   },
   "homepage": "https://github.com/dracupid/flex-buffer#readme",
   "dependencies": {
-    "flex-buffer": "^0.4.1"
+    "flex-buffer": "^0.4.2"
   }
 }
