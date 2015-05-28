@@ -9,7 +9,7 @@ class QueueBuffer extends FlexBuffer
      * @type {number}
      * @prefix QueueBuffer.
     ###
-    @AUTO_RELEASE_THRESHOLD: 20 * 1024 * 1024 # 20M
+    @AUTO_RELEASE_THRESHOLD: 10 * 1024 * 1024 # 10M
 
     ###*
      * see [FlexBuffer](https://github.com/dracupid/flex-buffer#constructorarg-opts--)
