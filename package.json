@@ -1,7 +1,7 @@
 {
   "name": "queue-buffer",
   "version": "0.1.5",
-  "description": "A flexible buffer with a complete but limited Buffer API.",
+  "description": "A flex buffer which behaves as a dynamic queue with a complete but limited Buffer API.",
   "main": "dist/index.js",
   "scripts": {
     "test": "no test",
