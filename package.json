@@ -26,18 +26,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dracupid/flex-buffer.git"
+    "url": "git+https://github.com/dracupid/queue-buffer.git"
   },
   "keywords": [
     "flex",
+    "queue"
     "buffer",
     "resize",
-    "auto"
+    "auto",
+    "release"
   ],
   "bugs": {
-    "url": "https://github.com/dracupid/flex-buffer/issues"
+    "url": "https://github.com/dracupid/queue-buffer/issues"
   },
-  "homepage": "https://github.com/dracupid/flex-buffer#readme",
+  "homepage": "https://github.com/dracupid/queue-buffer#readme",
   "dependencies": {
     "flex-buffer": "^0.4.3"
   }
