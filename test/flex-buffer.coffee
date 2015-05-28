@@ -1,4 +1,3 @@
-
 FB = require '../src'
 assert = require 'assert'
 util = require 'util'

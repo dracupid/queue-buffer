@@ -6,7 +6,6 @@ A flex buffer which behaves as a dynamic queue with a complete but limited Buffe
 - Entities in the queue are kept in order and the only operations on the collection are the addition of entities to the rear terminal position, known as enqueue(write), and removal of entities from the front terminal position, known as dequeue(read).
 
 [![NPM version](https://badge.fury.io/js/queue-buffer.svg)](https://www.npmjs.com/package/queue-buffer)
-[![Deps](https://david-dm.org/dracupid/queue-buffer.svg?style=flat)](https://david-dm.org/dracupid/queue-buffer)
 [![Build Status](https://travis-ci.org/dracupid/queue-buffer.svg)](https://travis-ci.org/dracupid/queue-buffer)
 [![Build status](https://ci.appveyor.com/api/projects/status/github/dracupid/queue-buffer?svg=true)](https://ci.appveyor.com/project/dracupid/queue-buffer)
 
@@ -129,4 +128,4 @@ Environment: io.js v2.0.0, OS X 10.10.2, Intel(R) Core(TM) i7-4870HQ CPU @ 2.50G
     - FlexBuffer x 14,698,706 ops/sec ±0.84% (93 runs sampled)
 
 ## License
-MIT@Dracupid
+MIT@Jingchen Zhao

@@ -39,6 +39,6 @@
   },
   "homepage": "https://github.com/dracupid/flex-buffer#readme",
   "dependencies": {
-    "flex-buffer": "^0.4.2"
+    "flex-buffer": "^0.4.3"
   }
 }
