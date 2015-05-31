@@ -29,80 +29,80 @@ QueueBuffer extends Flexbuffer, please see [Flex-Buffer](https://github.com/drac
 
 
 
-- #### <a href="./src/index.coffee?source#L12" target="_blank"><b>QueueBuffer.AUTO\_RELEASE_THRESHOLD</b></a>
-  Auto release threshold(ms)
+- #### <a href="./src/index.coffee?source#L12" target="_blank"><b>QueueBuffer.AUTO\_RELEASE_THRESHOLD </b></a>
+    Auto release threshold(ms)
 
-  - **<u>type</u>**: { _number_ }
+  - **type**:  { _number_ }
 
-- #### <a href="./src/index.coffee?source#L21" target="_blank"><b>constructor(arg, opts = {})</b></a>
-  see [FlexBuffer](https://github.com/dracupid/flex-buffer#constructorarg-opts--)
+- #### <a href="./src/index.coffee?source#L21" target="_blank"><b>constructor (arg, opts = {})</b></a>
+    see [FlexBuffer](https://github.com/dracupid/flex-buffer#constructorarg-opts--)
 
-  - **<u>param</u>**: `arg` { _number | Buffer | Array | string_ }
+  - **param**: `arg` { _number | Buffer | Array | string_ }
 
     The same arg as Buffer.
 
-  - **<u>param</u>**: `opts` { _Object={}_ }
+  - **param**: `opts` { _Object={}_ }
 
     options
 
-  - **<u>option</u>**: `autoRelease` { _boolean_ }
+  - **option**: `autoRelease` { _boolean_ }
 
     auto       release useless space
 
-  - **<u>option</u>**: `autoReleaseThreshold` { _number_ }
+  - **option**: `autoReleaseThreshold` { _number_ }
 
     auto release threshold(ms)
 
-- #### <a href="./src/index.coffee?source#L33" target="_blank"><b>free()</b></a>
-  Release useless space which has been read.
+- #### <a href="./src/index.coffee?source#L33" target="_blank"><b>free ()</b></a>
+    Release useless space which has been read.
 
-- #### <a href="./src/index.coffee?source#L80" target="_blank"><b>move(size)</b></a>
-  Move current read offset.
+- #### <a href="./src/index.coffee?source#L80" target="_blank"><b>move (size)</b></a>
+    Move current read offset.
 
-  - **<u>param</u>**: `size` { _number_ }
+  - **param**: `size` { _number_ }
 
     number of bytes to move, can be negative.
 
-- #### <a href="./src/index.coffee?source#L90" target="_blank"><b>skip(size)</b></a>
-  Move current read offset forward.
+- #### <a href="./src/index.coffee?source#L90" target="_blank"><b>skip (size)</b></a>
+    Move current read offset forward.
 
-  - **<u>param</u>**: `size` { _number_ }
+  - **param**: `size` { _number_ }
 
     number of bytes to skip
 
-- #### <a href="./src/index.coffee?source#L100" target="_blank"><b>rewind(size)</b></a>
-  Move current read offset backward.
+- #### <a href="./src/index.coffee?source#L100" target="_blank"><b>rewind (size)</b></a>
+    Move current read offset backward.
 
-  - **<u>param</u>**: `size` { _number_ }
+  - **param**: `size` { _number_ }
 
     number of bytes to rewind
 
-- #### <a href="./src/index.coffee?source#L122" target="_blank"><b>read(size) (alias: unshift, dequeue) </b></a>
-  Read bytes from the head of the buffer.
+- #### <a href="./src/index.coffee?source#L122" target="_blank"><b>read (size)  <small>(alias: unshift, dequeue)</small> </b></a>
+    Read bytes from the head of the buffer.
 
-  - **<u>param</u>**: `size` { _number_ }
+  - **param**: `size` { _number_ }
 
     number of bytes to read
 
-  - **<u>return</u>**: { _Buffer_ }
+  - **return**:  { _Buffer_ }
 
     data
 
-- #### <a href="./src/index.coffee?source#L146" target="_blank"><b>write(value, encoding = "utf8") (alias: push, enqueue) </b></a>
-  see [FlexBuffer](https://github.com/dracupid/flex-buffer#writevalue-encoding--utf8)
+- #### <a href="./src/index.coffee?source#L146" target="_blank"><b>write (value, encoding = "utf8")  <small>(alias: push, enqueue)</small> </b></a>
+    see [FlexBuffer](https://github.com/dracupid/flex-buffer#writevalue-encoding--utf8)
 
-  - **<u>param</u>**: `value` { _number | string | Array | Buffer_ }
+  - **param**: `value` { _number | string | Array | Buffer_ }
 
     The value to write
 
-  - **<u>param</u>**: `encoding` { _string="utf8"_ }
+  - **param**: `encoding` { _string="utf8"_ }
 
     string encoding
 
-- #### <a href="./src/index.coffee?source#L154" target="_blank"><b>length</b></a>
-  length of the data
+- #### <a href="./src/index.coffee?source#L154" target="_blank"><b>length </b></a>
+    length of the data
 
-  - **<u>type</u>**: { _number_ }
+  - **type**:  { _number_ }
 
 
 
