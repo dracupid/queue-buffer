@@ -40,15 +40,15 @@ npm test
 ```
 npm run benchmark
 ```
-Environment: io.js v2.0.0, OS X 10.10.2, Intel(R) Core(TM) i7-4870HQ CPU @ 2.50GHz
+Environment: io.js v2.0.3, OS X 10.10.4, Intel(R) Core(TM) i7-4870HQ CPU @ 2.50GHz
 
 - Read
-    - Buffer x 710,928 ops/sec ±0.40% (91 runs sampled)
-    - FlexBuffer x 687,658 ops/sec ±1.44% (90 runs sampled)
+    - Buffer x 710,196 ops/sec ±0.21% (96 runs sampled)
+    - FlexBuffer x 661,346 ops/sec ±0.55% (93 runs sampled)
 
 - wrapped native API
-    - Buffer x 20,815,938 ops/sec ±0.59% (94 runs sampled)
-    - FlexBuffer x 14,698,706 ops/sec ±0.84% (93 runs sampled)
+    - Buffer x 18,077,082 ops/sec ±0.80% (93 runs sampled)
+    - FlexBuffer x 13,009,392 ops/sec ±0.73% (90 runs sampled)
 
 ## License
 MIT@Jingchen Zhao
