@@ -165,8 +165,11 @@ _readerBuilder = (len, k, v) ->
 
         res
 
-for k, v of Buffer::
+BufferKeys = Object.keys Buffer::
+
+for k in BufferKeys
     if k.indexOf('read') is 0
+        v = Buffer::[k]
         do (k, v) ->
             arr = k.match /\d+/
             if arr and arr[0]
