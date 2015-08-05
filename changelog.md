@@ -1,3 +1,6 @@
+### v0.2.0
+- adapt for io.js 3.0.0
+
 ### v0.1.6
 - decrease default AUTO_RELEASE_THRESHOLD
 
