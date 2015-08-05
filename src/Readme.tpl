@@ -40,15 +40,27 @@ npm test
 ```
 npm run benchmark
 ```
-Environment: io.js v2.0.3, OS X 10.10.4, Intel(R) Core(TM) i7-4870HQ CPU @ 2.50GHz
+Environment: OS X 10.10.4, Intel(R) Core(TM) i7-4870HQ CPU @ 2.50GHz
 
+**io.js v2.4.0**
 - Read
-    - Buffer x 710,196 ops/sec ±0.21% (96 runs sampled)
-    - FlexBuffer x 661,346 ops/sec ±0.55% (93 runs sampled)
+    - Buffer x 721,399 ops/sec ±0.52% (93 runs sampled)
+    - FlexBuffer x 656,232 ops/sec ±0.87% (90 runs sampled)
 
 - wrapped native API
-    - Buffer x 18,077,082 ops/sec ±0.80% (93 runs sampled)
-    - FlexBuffer x 13,009,392 ops/sec ±0.73% (90 runs sampled)
+    - Buffer x 17,708,521 ops/sec ±0.72% (93 runs sampled)
+    - FlexBuffer x 12,937,044 ops/sec ±0.70% (91 runs sampled)
+
+**io.js v3.0.0**
+> see https://github.com/dracupid/flex-buffer#benchmark for more info
+
+- Read
+    - Buffer x 323,664 ops/sec ±0.68% (91 runs sampled)
+    - FlexBuffer x 320,600 ops/sec ±0.75% (93 runs sampled)
+
+- wrapped native API
+    - Buffer x 9,614,392 ops/sec ±0.70% (92 runs sampled)
+    - FlexBuffer x 7,115,334 ops/sec ±0.68% (93 runs sampled)
 
 ## License
 MIT@Jingchen Zhao
